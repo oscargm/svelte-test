@@ -1,6 +1,6 @@
 <script>
   export let name;
-  import Card from "./components/card.svelte";
+  import Card from "./components/card/card.svelte";
 </script>
 
 <style>
@@ -36,6 +36,9 @@
     to learn how to build Svelte apps.
   </p>
   <div class="card-wrapper">
+    <Card />
+    <Card />
+    <Card />
     <Card />
     <Card />
     <Card />
