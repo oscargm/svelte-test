@@ -20,6 +20,7 @@
   .card-wrapper {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
   }
   @media (min-width: 640px) {
     main {
@@ -36,11 +37,8 @@
     to learn how to build Svelte apps.
   </p>
   <div class="card-wrapper">
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
+    {#each Array(8) as _, i}
+      <Card index={i} />
+    {/each}
   </div>
 </main>

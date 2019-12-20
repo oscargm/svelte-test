@@ -3,6 +3,8 @@
   import Body from "./card-body.svelte";
   import Footer from "./card-footer.svelte";
 
+  export let index;
+
   const actions = [
     {
       id: 0,
@@ -37,10 +39,12 @@
   };
 
   const setCardBodyBackgroundColor = buttonType => {
-    document.querySelectorAll(".card-body").forEach(card => {
-      card.style.background = colors[buttonType].background;
-      card.style.color = colors[buttonType].color;
-    });
+    let card = document
+      .getElementById(`card-${index}`)
+      .querySelector(".card-body");
+
+    card.style.background = colors[buttonType].background;
+    card.style.color = colors[buttonType].color;
   };
 
   function handleClick(buttonType) {
@@ -64,7 +68,7 @@
   }
 </style>
 
-<div class="card-wrapper">
+<div class="card-wrapper" id={`card-${index}`}>
   <div class="card">
     <Header text={'Click on the buttons'} />
     <Body
